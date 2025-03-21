@@ -976,7 +976,7 @@ class PlayState extends MusicBeatState
 
 		for (i in 0...5)
 		{
-			var star = new FlxSprite(pHPBG.getGraphicMidpoint().x + 172 + ((i - (5/2))*(12*6)),pHPBG.y+pHPBG.height + 9).loadGraphic(Paths.image('pixelHUD/stars'),true,11,10);//ngl this sucks ass but erm lol!
+			var star = new FlxSprite(pHPBG.getGraphicMidpoint().x + 4 + ((i - (5/2))*(12*6)),pHPBG.y+pHPBG.height + 9).loadGraphic(Paths.image('pixelHUD/stars'),true,11,10);//ngl this sucks ass but erm lol!
 			//ill fix these positions later because holy this sucks
 			star.animation.add('still',[0]);
 			star.animation.add('flash',[0,1,2],12);
