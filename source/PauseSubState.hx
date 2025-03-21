@@ -212,12 +212,6 @@ class PauseSubState extends MusicBeatSubstate
 					PlayState.instance.paused = true; // For lua
 					PlayState.instance.vocals.volume = 0;
 					MusicBeatState.switchState(new OptionsState());
-					// if(ClientPrefs.pauseMusic != 'None')
-					// {
-					// 	FlxG.sound.playMusic(Paths.music(Paths.formatToSongPath(ClientPrefs.pauseMusic)), pauseMusic.volume);
-					// 	FlxTween.tween(FlxG.sound.music, {volume: 1}, 0.8);
-					// 	FlxG.sound.music.time = pauseMusic.time;
-					// }
 					OptionsState.onPlayState = true;
 				case "exit":
 					if (PlayState.SONG.song.toLowerCase() == 'followed' && FlxG.save.data.firstFollowedExit == null) {
