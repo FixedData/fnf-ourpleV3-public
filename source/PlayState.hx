@@ -4721,7 +4721,7 @@ class PlayState extends MusicBeatState
 		var boyfriendCamDisplace:Array<Float> = [0.,0.];
 		var dadCamDisplace:Array<Float> = [0.,0.0];
 		var offsets:Array<Float> = [0.,0.];
-		if (isNote && (ClientPrefs.followChars || SONG.song.toLowerCase() == 'restless')){
+		if (isNote && (ClientPrefs.followChars || SONG.song.toLowerCase() == 'restless' || SONG.song.toLowerCase() == 'followed')){
 			if (isCameraOnForcedDad) isDad = true;
 			if (isCameraOnForcedBoyfriend) isDad = false;
 			var char = isDad ? dad : boyfriend;
