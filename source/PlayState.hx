@@ -976,7 +976,7 @@ class PlayState extends MusicBeatState
 
 		for (i in 0...5)
 		{
-			var star = new FlxSprite(pHPBG.getGraphicMidpoint().x + 172 + ((i - (5/2))*(12*6)),pHPBG.y+pHPBG.height + 9).loadGraphic(Paths.image('pixelHUD/stars'),true,11,10);//ngl this sucks ass but erm lol!
+			var star = new FlxSprite(pHPBG.getGraphicMidpoint().x + 4 + ((i - (5/2))*(12*6)),pHPBG.y+pHPBG.height + 9).loadGraphic(Paths.image('pixelHUD/stars'),true,11,10);//ngl this sucks ass but erm lol!
 			//ill fix these positions later because holy this sucks
 			star.animation.add('still',[0]);
 			star.animation.add('flash',[0,1,2],12);
@@ -2199,7 +2199,7 @@ class PlayState extends MusicBeatState
 			for (i in 0...opponentStrums.length) {
 				setOnLuas('defaultOpponentStrumX' + i, opponentStrums.members[i].x);
 				setOnLuas('defaultOpponentStrumY' + i, opponentStrums.members[i].y);
-				//if(ClientPrefs.middleScroll) opponentStrums.members[i].visible = false;
+				if(ClientPrefs.middleScroll) opponentStrums.members[i].visible = false;
 			}
 
 			startedCountdown = true;
@@ -4721,7 +4721,7 @@ class PlayState extends MusicBeatState
 		var boyfriendCamDisplace:Array<Float> = [0.,0.];
 		var dadCamDisplace:Array<Float> = [0.,0.0];
 		var offsets:Array<Float> = [0.,0.];
-		if (isNote && ClientPrefs.followChars){
+		if (isNote && (ClientPrefs.followChars || SONG.song.toLowerCase() == 'restless' || SONG.song.toLowerCase() == 'followed')){
 			if (isCameraOnForcedDad) isDad = true;
 			if (isCameraOnForcedBoyfriend) isDad = false;
 			var char = isDad ? dad : boyfriend;
