@@ -8,3 +8,6 @@
 * Download hmm haxelib and run it
 * in a cmd in the directory of the source do "hmm install"
 ### Then you should be ready to "lime test windows"
+
+
+Please note this repo has not and will not be further maintained. There are many bugs and issues and I apologize for that. Otherwise, have fun!
