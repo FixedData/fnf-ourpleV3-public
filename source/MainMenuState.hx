@@ -24,6 +24,8 @@ import flixel.input.keyboard.FlxKey;
 import flixel.addons.display.FlxBackdrop;
 import flixel.addons.display.FlxGridOverlay;
 
+import options.OptionsState;
+
 using StringTools;
 
 class MainMenuState extends MusicBeatState
@@ -77,6 +79,7 @@ class MainMenuState extends MusicBeatState
 		transOut = FlxTransitionableState.defaultTransOut;
 
 		persistentUpdate = persistentDraw = true;
+		OptionsState.onPlayState = false;
 
 		if (FlxG.sound.music.length != 118142) { //weird asf way to do this but err lol?
 			FlxG.sound.playMusic(Paths.music('freakyMenu'),0);
