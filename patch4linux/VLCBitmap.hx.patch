@@ -1,0 +1,32 @@
+--- /Repositorys/fnf-ourpleV3-public/.haxelib/hxCodec/2,6,1/hxcodec/vlc/VLCBitmap.hx	2026-02-28 14:01:35.304894746 -0500
++++ /Repositorys/.haxelib/hxCodec/2,6,1/hxcodec/vlc/VLCBitmap.hx	2026-02-28 01:03:42.000000000 -0500
+@@ -16,6 +16,9 @@
+ import openfl.events.Event;
+ import openfl.utils.ByteArray;
+ import hxcodec.vlc.LibVLC;
++import cpp.RawPointer;
++import cpp.RawConstPointer;
++import cpp.ConstCharStar;
+ 
+ /**
+  * ...
+@@ -154,7 +157,19 @@
+ 		for (event in 0...7)
+ 			flags[event] = false;
+ 
++		#if linux
++		instance = untyped __cpp__('
++			[]() {
++				const char* const args[] = {
++					"--no-lua",
++					"--quiet"
++				};
++				return libvlc_new(2, args);
++			}()
++		');
++		#else
+ 		instance = LibVLC.init(0, null);
++		#end
+ 		audioOutput = LibVLC.audio_output_list_get(instance);
+ 
+ 		if (stage != null)

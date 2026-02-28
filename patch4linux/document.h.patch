@@ -1,0 +1,11 @@
+--- /Repositorys/fnf-ourpleV3-public/.haxelib/discord_rpc/git/lib/rapidjson/include/rapidjson/document.h	2026-02-28 14:01:09.262632679 -0500
++++ /Repositorys/.haxelib/discord_rpc/git/lib/rapidjson/include/rapidjson/document.h	2026-02-28 00:48:56.000000000 -0500
+@@ -316,7 +316,7 @@
+ 
+     GenericStringRef(const GenericStringRef& rhs) : s(rhs.s), length(rhs.length) {}
+ 
+-    GenericStringRef& operator=(const GenericStringRef& rhs) { s = rhs.s; length = rhs.length; }
++    //GenericStringRef& operator=(const GenericStringRef& rhs) { s = rhs.s; length = rhs.length; }
+ 
+     //! implicit conversion to plain CharType pointer
+     operator const Ch *() const { return s; }
